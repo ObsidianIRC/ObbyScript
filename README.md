@@ -18,11 +18,19 @@ A powerful server-side JavaScript scripting module for UnrealIRCd using the embe
 - **Database API**: Persistent storage with optional encryption via UnrealDB
 
 ## Installation
+### Use the installer script
+1. Setup: `chmod +x install.sh`
+2. Run: `./install.sh`
+3. Type in your UnrealIRCd build directory
+   And then go to step 5 in [the Loading section](README.md#Loading)
 
+### Manual Installation
 1. Place `obbyscript.c` in `src/modules/third/`
 2. Place Duktape source files (`duktape.c`, `duktape.h`, `duk_config.h`) in the same directory
 3. Build: `EXLIBS="-lm" make` from the UnrealIRCd source directory
 4. Install: `make install` from the UnrealIRCd source directory
+
+### Loading
 5. Add to config: `loadmodule "third/obbyscript";`
 6. Create scripts directory: `mkdir /path/to/unrealircd/conf/scripts`
 7. Rehash the server: `/REHASH`
