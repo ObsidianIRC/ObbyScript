@@ -22,7 +22,8 @@ A powerful server-side JavaScript scripting module for UnrealIRCd using the embe
 1. Setup: `chmod +x install.sh`
 2. Run: `./install.sh`
 3. Type in your UnrealIRCd build directory
-   And then go to step 5 in [the Loading section](README.md#Loading)
+   
+And then go to step 5 in [the Loading section](README.md#Loading)
 
 ### Manual Installation
 1. Place `obbyscript.c` in `src/modules/third/`
