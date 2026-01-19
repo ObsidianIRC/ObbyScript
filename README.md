@@ -19,11 +19,11 @@ A powerful server-side JavaScript scripting module for UnrealIRCd using the embe
 
 ## Installation
 
-1. Place `javascript.c` in `src/modules/third/`
+1. Place `obbyscript.c` in `src/modules/third/`
 2. Place Duktape source files (`duktape.c`, `duktape.h`, `duk_config.h`) in the same directory
 3. Build: `EXLIBS="-lm" make` from the UnrealIRCd source directory
-4. Copy the module: `cp src/modules/third/javascript.so /path/to/unrealircd/modules/third/`
-5. Add to config: `loadmodule "third/javascript";`
+4. Install: `make install` from the UnrealIRCd source directory
+5. Add to config: `loadmodule "third/obbyscript";`
 6. Create scripts directory: `mkdir /path/to/unrealircd/conf/scripts`
 7. Rehash the server: `/REHASH`
 
