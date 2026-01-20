@@ -81,7 +81,7 @@ module
 *** <<<MODULE MANAGER END>>>
 */
 
-#define __GNU_SOURCE
+#define _GNU_SOURCE
 #include "unrealircd.h"
 #include <dirent.h>
 #include <sys/types.h>
