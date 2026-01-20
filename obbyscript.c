@@ -1059,13 +1059,13 @@ void js_push_client_object(duk_context *ctx, Client *client)
 	duk_push_string(ctx, client->name);
 	duk_put_prop_string(ctx, obj_idx, "name");
 
-	if (client->info && *client->info)
+	if (*client->info)
 	{
 		duk_push_string(ctx, client->info);
 		duk_put_prop_string(ctx, obj_idx, "info");
 	}
 
-	if (client->id && *client->id)
+	if (*client->id)
 	{
 		duk_push_string(ctx, client->id);
 		duk_put_prop_string(ctx, obj_idx, "id");
@@ -1083,7 +1083,7 @@ void js_push_client_object(duk_context *ctx, Client *client)
 		duk_push_string(ctx, client->user->username);
 		duk_put_prop_string(ctx, obj_idx, "username");
 
-		if (client->user->realhost && *client->user->realhost)
+		if (*client->user->realhost)
 		{
 			duk_push_string(ctx, client->user->realhost);
 			duk_put_prop_string(ctx, obj_idx, "realhost");
@@ -4226,7 +4226,7 @@ int js_hook_account_login(Client *client, MessageTag *mtags)
 		duk_push_global_object(jshook->ctx);
 		js_push_client_object(jshook->ctx, client);
 		duk_put_prop_string(jshook->ctx, -2, "$client");
-		duk_push_string(jshook->ctx, client->user && client->user->account ? client->user->account : "0");
+		duk_push_string(jshook->ctx, client->user && *client->user->account ? client->user->account : "0");
 		duk_put_prop_string(jshook->ctx, -2, "$account");
 		js_push_mtags_object(jshook->ctx, mtags);
 		duk_put_prop_string(jshook->ctx, -2, "$mtags");
